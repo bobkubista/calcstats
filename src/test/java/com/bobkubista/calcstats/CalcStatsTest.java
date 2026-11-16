@@ -6,50 +6,50 @@ import org.junit.jupiter.api.Test;
 
 class CalcStatsTest {
 
-	@Test()
-	public void testEmptyArray() {
+	@Test
+	void testEmptyArray() {
 		StatsCalc calc = new StatsCalc();
-		int array[] = {};
+		int[] array = {};
 		calc.calculate(array);
 		assertCalc(calc, Integer.MIN_VALUE, Integer.MAX_VALUE, 0, 0);
 	}
 
 	@Test
-	public void testSingletonArray() {
+	void testSingletonArray() {
 		StatsCalc calc = new StatsCalc();
-		int array[] = { 0 };
+		int[] array = { 0 };
 		calc.calculate(array);
 		assertCalc(calc, 0, 0, 0, 1);
 	}
 
 	@Test
-	public void testSingletonMinValue() {
+	void testSingletonMinValue() {
 		StatsCalc calc = new StatsCalc();
-		int array[] = { Integer.MIN_VALUE };
+		int[] array = { Integer.MIN_VALUE };
 		calc.calculate(array);
 		assertCalc(calc, Integer.MIN_VALUE, Integer.MIN_VALUE, Integer.MIN_VALUE, 1);
 	}
 
 	@Test
-	public void testSingletonMaxValue() {
+	void testSingletonMaxValue() {
 		StatsCalc calc = new StatsCalc();
-		int array[] = { Integer.MAX_VALUE };
+		int[] array = { Integer.MAX_VALUE };
 		calc.calculate(array);
 		assertCalc(calc, Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE, 1);
 	}
 
 	@Test
-	public void testTwoElementList() {
+	void testTwoElementList() {
 		StatsCalc calc = new StatsCalc();
-		int array[] = { 1, 3 };
+		int[] array = { 1, 3 };
 		calc.calculate(array);
 		assertCalc(calc, 1, 3, 2, 2);
 	}
 
 	@Test
-	public void testTwoElementListReversed() {
+	void testTwoElementListReversed() {
 		StatsCalc calc = new StatsCalc();
-		int array[] = { 3, 1 };
+		int[] array = { 3, 1 };
 		calc.calculate(array);
 		assertCalc(calc, 1, 3, 2, 2);
 	}
@@ -62,9 +62,9 @@ class CalcStatsTest {
 	}
 
 	@Test
-	public void testLargeList() {
+	void testLargeList() {
 		StatsCalc calc = new StatsCalc();
-		int array[] = { 6, 9, 15, -2, 92, 11 };
+		int[] array = { 6, 9, 15, -2, 92, 11 };
 		calc.calculate(array);
 		assertCalc(calc, -2, 92, 21.833333333333332, 6);
 	}
